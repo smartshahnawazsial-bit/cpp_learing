@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+ using namespace std;
+ 
+ int main ( )
+ {
+	string iteam;
+	int quantity;
+	
+	cout << "Enter iteam name:";
+	cin >> iteam;
+	cout << "=============================================" << endl;
+            
+	cout << "Enter quantity: ";
+	cin >> quantity;
+           //	getline (cin, salary);
+	cout << "=============================================" << endl;
+            
+	cout << endl;
+	 cout << "Iteam:" << iteam << endl;
+	cout << "Quantity:" << quantity<< endl;
+	cout << "=============================================" << endl;
+            
+	
+	return 0;
+		}
+		
