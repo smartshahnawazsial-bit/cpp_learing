@@ -1,0 +1,72 @@
+#include <iostream>
+ using namespace std;
+ 
+ int main(){
+		const double USD_TO_EUR = 0.89;
+		const double USD_TO_GBP = 0.74;
+		const double USD_TO_JPY = 162.50;
+		const double USD_TO_PAK = 278.25;
+		
+		int choice;
+		double usdAmount;
+		int convertedAmount = 0.0;
+		
+		 cout << "=============================================" << endl;
+            
+		cout << " === Currency ( Base USD) ===" << endl;
+		cout << "select target Currency " << endl;
+		cout << "1.( EUR) " << endl;
+		cout << "2.(GBP)" << endl;
+		cout << "3. (JPY) " << endl;
+	    cout << "4. (RS) " << endl;
+	    
+		 cout << "=============================================" << endl;
+            
+		cout << "Enter your choice (1-4)" << endl;
+		cin >> choice;
+		
+		if ( choice < 1 || choice > 4 ){
+			cout << "Error: Invlid menu selection. Exiting program.." << endl;
+			return 1;	
+		}
+		cout << "Enter amount in USD: $";
+		cin >> usdAmount;
+		
+		 if(usdAmount < 0) {
+        cout <<"Error: Amount cannot be negative!" <<endl;
+        return 1;
+ }
+  switch(choice){
+        case 1:
+            convertedAmount = usdAmount * USD_TO_EUR;
+            cout << "$" << usdAmount << " USD = " << convertedAmount << "EUR" <<endl;
+             cout << "=============================================" << endl;
+            
+			break;
+            
+             case 2:
+            convertedAmount = usdAmount * USD_TO_GBP;
+            cout << "$" << usdAmount << " USD = " << convertedAmount << "GBP" <<endl;
+            cout << "=============================================" << endl;
+            
+		    break;
+            
+             case 3:
+            convertedAmount = usdAmount * USD_TO_JPY;
+            cout << "$" << usdAmount << " USD = " << convertedAmount << "JPY" <<endl;
+            cout << "=============================================" << endl;
+            
+		    break;
+            
+             case 4:
+            convertedAmount = usdAmount * USD_TO_PAK;
+            cout << "$" << usdAmount << " USD = " << convertedAmount << "PAK" <<endl;
+           cout << "=============================================" << endl;
+		    break;
+            
+		}
+            cout << "=============================================" << endl;
+            
+		
+		return 0;
+	}
