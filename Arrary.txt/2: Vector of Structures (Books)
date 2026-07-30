@@ -1,0 +1,56 @@
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+struct Book 
+{
+	int id;
+	string title;
+	double price;
++3
+
+};
+
+int main()
+{
+	vector<Book> books;
+	Book b;
+	for ( int i = 0; i < 3; i++ )
+	{
+		cout << "Book " << i + 1 << endl;
+	
+	cout << "ID :";
+	cin >> b.id; 
+	
+  cout << "Title :";
+	cin >> b.title; 
+	
+	cout << "Price :";
+	cin >> b.price; 
+	
+	books.push_back(b);
+	}
+
+	cout << "First Book : " << books.front().title << endl;
+	cout << "Last Book : " << books.back().title << endl;
+ 
+cout << "\nBook List\n";
+
+	for(int i = 0; i < books.size(); i++) {
+		
+	cout << books[i].id << " " << books[i].title << " " << books[i].price << endl;
+	}
+	
+	books.clear();
+	cout << "2nd Loop : " <<endl;
+for (Book book : books)
+{
+	cout << book.id << " " << book.title << " " << book.price << endl;
+}
+
+
+
+		return 0;
+}
