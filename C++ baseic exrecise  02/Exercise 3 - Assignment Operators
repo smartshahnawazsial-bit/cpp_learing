@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int number = 400;
+	
+	cout << "Initial Value = " << number << endl;
+	
+	
+	number += 20;
+	cout << "After += 20 : " << number << endl;
+	
+	number -= 10;
+	cout << "After -= 10: " << number << endl;
+	
+	number *= 20;
+	cout << "After *= 2 : " << number << endl;
+	
+	
+	number /= 20;
+	cout << "After /= 4 : " << number << endl;
+	
+	number %= 20;
+	cout << "After %= 7 : " << number << endl;
+	
+	
+	return 0;
+}
