@@ -1,0 +1,15 @@
+#include <iostream>
+ using namespace std;
+  
+  int main()
+  {
+		int account = 1001;
+		double balance = 5500.75;
+		bool active = true;
+		
+		cout << "Account: " << account << endl;
+		cout << "Balance: " << balance << endl;
+		cout << "Active: " << active ;
+		 
+		 return 0;
+  }
