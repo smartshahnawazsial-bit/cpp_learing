@@ -1,0 +1,138 @@
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+struct Todo {
+	int id;
+	string name;
+	string priority;
+	string status;
+};
+
+struct TodoList {
+	vector<Todo> todolist;
+	
+	Todo todo;
+	int nextId;
+	void add(){
+		// ID can be duplicated by user - so should be set by the program
+		//cout << "Enter ID: " <<endl;
+		todo.id = ++nextId;
+		
+		cout << "Enter Name: " <<endl;
+	//	getline(cin, todo.name);
+		cin >> todo.name;
+		
+		// handle wrong priority - show error message & ask agin for choose priroty
+		int priority;
+		cout << "Choose Priority: " << endl;
+		cout << "1. High " <<endl;
+		cout << "2. Medium " << endl;
+		cout << "3. Low " << endl;
+		cin >> priority;
+		
+		switch(priority){
+			case 1:
+				todo.priority = "High";
+				break;
+			case 2:
+				todo.priority = "Medium";
+				break;
+			case 3:
+				todo.priority = "Low";
+				break;
+			default:
+				cout << "Selected wrong priority option " << endl;
+				todo.priority = "Not Set";
+				break;
+		}
+		
+		todo.status = "Pending";
+		
+		todolist.push_back(todo);
+	}
+	
+	void showList() {
+		cout << "\n============================\n" <<endl;
+		cout << "\n======== Show Todo List ========\n" <<endl;
+		cout << "\n============================\n" <<endl;
+		
+		if(todolist.empty()) {
+			cout << "Todo list is empty." << endl;
+			return;
+		}
+		
+		for(Todo todo: todolist){
+			cout << endl <<endl;
+			cout << "\n ************ \n";
+			cout << "ID : " << todo.id <<endl;
+			cout << "Name : " << todo.name <<endl;
+			cout << "Priority : " << todo.priority <<endl;
+			cout << "status : " << todo.status <<endl;
+			cout << "\n ************** \n";
+		}
+		
+		cout << "\n=============================\n" <<endl;
+	}
+	
+	void search() {
+		cout << " Search task. " <<endl;
+	}
+	void update(){
+		cout << " update task. " <<endl;
+	}
+	void remove(){
+		cout << " delete task. " <<endl;
+	}
+};
+
+int main() {
+	TodoList todolist;
+	int option;
+	
+
+	
+	do {
+		cout << "\n===================\n" ;
+		cout << "====== Welcome in Task Manager =======" <<endl;
+		
+		cout << "chose options" << endl;
+		cout << "1. View List." <<endl;
+		cout << "2. Add Task. " <<endl;
+		cout << "3. Search Task. " <<endl;
+		cout << "4. Update Task. " <<endl;
+		cout << "5. Delete Task. " <<endl;
+		cout << "9. Exit. " << endl;
+		
+		cin >> option;
+		switch(option){
+			case 1:
+				todolist.showList();
+				break;
+			case 2:
+				todolist.add();
+				break;
+			case 3:
+				todolist.search();
+				break;
+			case 4:
+				todolist.update();
+				break;
+			case 5:
+				todolist.remove();
+				break;
+			case 9:
+				cout << "Thank you! Program Closed" <<endl;
+				break;
+			defalut:
+				cout << "Wrong option selected." << endl;
+				break;
+		}
+		
+	} while(option != 9);
+	
+	
+	return 1;
+}
